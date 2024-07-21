@@ -1,0 +1,22 @@
+.generate-article-button .generate-article-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.generate-article-button button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.generate-article-button .generate-article-container .button-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.generate-article-button .generate-article-container .button-container img {
+  width: 50px;
+}

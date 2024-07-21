@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "short_name": "Article Writer",
+  "name": "Article Writer with AI",
+  "version": "1.0",
+  "description": "",
+  "action": {
+    "default_title": "Article Writer",
+    "default_icon": "images/icon.png",
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "optional_permissions": [
+    "topSites"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self'; object-src 'self'"
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  }
+}
+
