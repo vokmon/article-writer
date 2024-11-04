@@ -9,7 +9,7 @@ const promptTemplate = `
   Firstly you will study about the given context to know what it is talking about.
   
   Try to remove unneccessary and irrelevant content from the context and create a new article based on the given context.
-  The article should be created in a short and concise format but full of information in Thai language however can include some
+  The article should be created in a short and concise format but full of information in {lang} language however You can include some
   technical word in English.
   The style of the article should be casual and easy to read for everyone and remove the redundant content.
   The outtro should be alter and adjust to article style not video.
@@ -32,11 +32,12 @@ export const llm = new ChatGoogleGenerativeAI({
 
 const prompt = PromptTemplate.fromTemplate(promptTemplate);
 
-export const generateArticleFromContent = async (content: string) => {
+export const generateArticleFromContent = async (content: string, lang: string = "Thai") => {
   
   const chain = RunnableSequence.from([prompt, llm, new StringOutputParser()]);
   const response = await chain.invoke({
     context: content,
+    lang: lang,
   });
   return response;
 };

@@ -1,3 +1,4 @@
 export type ContentGeneratorProps = {
-  onGenerateArticleSuccess: (artible: string) => void;
+  onGenerateArticleSuccess: (article: string) => void;
+  language: string;
 };

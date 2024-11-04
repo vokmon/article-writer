@@ -6,6 +6,7 @@ import { ContentGeneratorProps } from "./ContentGeneratorProps";
 
 export default function Youtube({
   onGenerateArticleSuccess,
+  language,
 }: ContentGeneratorProps) {
   const [currentUrl, setCurrentUrl] = useState<string | undefined>();
 
@@ -19,7 +20,7 @@ export default function Youtube({
       disabled={!isYoutubeWatchPage(currentUrl ?? "")}
       generateArticleFunction={async () => {
         if (currentUrl) {
-          const result = await createArticleFromYoutube(currentUrl);
+          const result = await createArticleFromYoutube(currentUrl, language);
           return result;
         }
         return "";
