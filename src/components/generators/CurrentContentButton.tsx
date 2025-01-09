@@ -10,6 +10,7 @@ function DOMtoString() {
 
 export default function CurrentContentButton({
   onGenerateArticleSuccess,
+  language,
 }: ContentGeneratorProps) {
   const [currentContent, setCurrentContent] = useState<string | undefined>();
 
@@ -37,7 +38,7 @@ export default function CurrentContentButton({
       disabled={false}
       generateArticleFunction={async () => {
         if (currentContent) {
-          return await generateArticleFromContent(currentContent);
+          return await generateArticleFromContent(currentContent, language);
         }
         return currentContent ?? "";
       }}
